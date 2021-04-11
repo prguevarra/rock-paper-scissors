@@ -24,23 +24,22 @@ function game(){
 // Single round of the game
 function playround(playerSelection, computerSelection) {
     if (computerSelection == playerSelection) {
-        return "It's a draw!";
+        console.log("It's a draw!");
     } else if 
              ((playerSelection == "PAPER" && computerSelection == "ROCK") ||
               (playerSelection == "ROCK" && computerSelection == "SCISSORS") ||
               (playerSelection == "SCISSORS" && computerSelection == "PAPER"))
     {
-        pCounter =+ 1;
-        return "You win!!";
+        console.log("You win!!");
+        return pCounter = 1;
     } else if
             ((playerSelection == "PAPER" && computerSelection == "SCISSORS") ||
              (playerSelection == "ROCK" && computerSelection == "PAPER") ||
              (playerSelection == "SCISSORS" && computerSelection == "ROCK"))
     {
-        cCounter =+ 1;
-        return "You lose!";
+        console.log("You lose!");
+        return cCounter = 1;
     } else { 
-        return "Hey! That's invalid!";
+        console.log("Hey! That's invalid!");
     }
 }
-
