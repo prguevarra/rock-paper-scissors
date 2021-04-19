@@ -4,11 +4,26 @@
         <meta charset="utf-8">
         <title>Rock, Paper or Scissors</title>
         <link rel="stylesheet" href="stylesheets/reset.css" type="text/css" media="all"/>
-        <script src="script.js"></script> 
-        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="all"/>
     </head>
     <body>
-        <p><b>ROCK, PAPER OR  SCISSORS?</b></p><br><br>
-        <h1>To play, open the console by pressing <b>F12</b> or <b>Ctrl+Shift+J!</b></h1>
-    </body>
-</html>
+        <div id = "page-title">ROCK, PAPER OR SCISSORS? <br><h1 id = "version">Paw version</h1></div>
+        <div id = "game-guide"> Hey there, hooman! Ready to play with <i>meow </i>?
+            <br>Win 5 rounds to win the game!
+            <br> Choose your weapon:
+        </div>
+        <div id = "weapon-list">
+            <ul>
+                <li><img src = "/home/prguevarra/Documents/the_odin_project/rock-paper-scissors/assets/" alt = "Rock"/></li>
+                <li><img src = "" alt = "Paper"></li>
+                <li><img src = "" alt = "Scissors"></li>
+            </ul>
+        </div>
+        <div id = "current-score"> You score: Meow score: </div>
+       <!-- add here DOM version of div to show the overall score-->
+        <footer>Credits
+            <a href="https://www.vecteezy.com/free-vector/cartoon">Cartoon Vectors by Vecteezy</a> 
+        </footer>
+        <script src="script.js"></script>
+    </body> 
+</html> 
