@@ -7,19 +7,33 @@
         <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="all"/>
     </head>
     <body>
-        <div id = "page-title">ROCK, PAPER OR SCISSORS? <br><h1 id = "version">Paw version</h1></div>
-        <div id = "game-guide"> Hey there, hooman! Ready to play with <i>meow </i>?
-            <br>Win 5 rounds to win the game!
-            <br> Choose your weapon:
+        <div id = "page-title">ROCK, PAPER OR SCISSORS? <br><h1 id = "version">Kitty version</h1></div>
+        <div id = "game-guide"> Hey there, hooman! Ready to play with meow?
+            <br><br><p id = "ask">Choose your weapon:</p>
         </div>
-        <div id = "weapon-list">
-            <ul>
-                <li><img src = "/home/prguevarra/Documents/the_odin_project/rock-paper-scissors/assets/" alt = "Rock"/></li>
-                <li><img src = "" alt = "Paper"></li>
-                <li><img src = "" alt = "Scissors"></li>
-            </ul>
+        <div id = "weapons">
+                <div id = "rock">
+                    <img src = "./assets/rock_reduced.jpg" alt = "Rock">
+                    <p class = "weapon-label"> ROCK </p>
+                </div>
+                <div id = "paper">
+                    <img src = "./assets/paper_reduced.jpg" alt = "Paper">
+                    <p class = "weapon-label"> PAPER </p>
+                </div>
+                <div id = "scissors">
+                    <img src = "./assets/scissors_reduced.jpg" alt = "Scissors">
+                    <p class = "weapon-label"> SCISSORS </p>
+                </div>
         </div>
-        <div id = "current-score"> You score: Meow score: </div>
+        <div id = "counter"> 
+                <div id = "player-score"> </div>
+                    <div class = "score">0</div>
+                    <div class = "player">Hooman</div>
+                <div id = "computer-score"> </div>
+                    <div class = "score">0</div>
+                    <div class = "player">Muning</div>
+        </div>
+            
        <!-- add here DOM version of div to show the overall score-->
         <footer>Credits
             <a href="https://www.vecteezy.com/free-vector/cartoon">Cartoon Vectors by Vecteezy</a> 
