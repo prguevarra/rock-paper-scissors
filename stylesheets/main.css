@@ -75,7 +75,7 @@ img {
     border-radius: 50%;
 }
 
-main div.weapon:hover {
+div.weapon:hover {
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     background-color: #FBE3DB;
     border: 1px solid #dadce0; 
