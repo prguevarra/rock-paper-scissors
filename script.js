@@ -1,96 +1,88 @@
-// Welcome the user and ask to play the game.
-console.log(`Hey there user! Are you ready to play the game? if so, type in %cgame()`, "color:white; background:red; style:bold;");
+// query selectors for the divs
+const gameResult = document.querySelector('.results');
+const weaponsFired = document.querySelector('.round-weapons');
+const scoreBoard = document.querySelector('.score-board');
+const finalVerdict = document.querySelector('.final-verdict');
+const weapons = document.querySelectorAll('.weapon');
 
-// Generate random computer answers.
+// add event listeners for each choice
+weapons.forEach((weapon, index) => {
+    weapon.addEventListener('click', playerPlay);
+});
+
+// generate random computer answers
 const computerPlay = function() {
-    const randomAnswer = Math.floor(Math.random()* 4);
-    if (randomAnswer === 2) {
+    const randomAnswer = Math.floor(Math.random()* 3);
+    if (randomAnswer === 1) {
         computerAnswer = "rock"
-    } else if (randomAnswer === 1 || randomAnswer === 3){
+    } else if (randomAnswer === 2){
         computerAnswer = "paper"
     } else {
         computerAnswer = "scissors"
     }
     return computerAnswer;
 }
-let computerSelection = computerPlay();
-
-
-// add event listeners for each choice
-const weapons = document.querySelectorAll('.weapon');
-weapons.forEach((weapon, index) => {
-    weapon.addEventListener('click', playerPlay);
-});
 
 // get value of clicked div and fire up a single play
 function playerPlay(e) {
     let playerSelection = e.target.getAttribute('data-name');
+    let computerSelection = computerPlay();
     playround(playerSelection, computerSelection);
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
 // plays 1 round of the game and display result
 function playround(playerSelection, computerSelection) {
-    const container = document.querySelector('#weapons');
-    const gameResult = document.createElement('div');
-    gameResult.classList.add('results');
-    container.appendChild(gameResult);
+    weaponsFired.textContent = `You chose ${playerSelection} while computer chose ${computerSelection}`;
 
     if (computerSelection == playerSelection) {
-        gameResult.textContent = "Oh! It's a draw";
+        gameResult.textContent = "Oh! It's a draw.";
+        gameResult.style.cssText = 'color: blue';
     } else if 
              ((playerSelection == "paper" && computerSelection == "rock") ||
               (playerSelection == "rock" && computerSelection == "scissors") ||
               (playerSelection == "scissors" && computerSelection == "paper"))
     {
-        gameResult.textContent = "Nice! You won!";
+        gameResult.textContent = "Nice! one point for you!";
+        gameResult.style.cssText = 'color: green';
+        playerScore ++;
     } else if
             ((playerSelection == "paper" && computerSelection == "scissors") ||
              (playerSelection == "rock" && computerSelection == "paper") ||
              (playerSelection == "scissors" && computerSelection == "rock"))
     {
-        gameResult.textContent = "Sorry, You lose!";
+        gameResult.textContent = "Sorry, this round is mine!";
+        gameResult.style.cssText = 'color: red';
+        computerScore ++;
     } else { 
         gameResult.textContent = "Sorry, that's invalid!";
+        gameResult.style.cssText = 'color: red';
     }
+    playVerdict(playerScore, computerScore);
 }
 
 
 // Play game 5 consecutive times and print the overall verdict
-// function game(){
-//     let playerScore = 0;
-//     let computerScore = 0;
-//     let drawScore = 0;
-//     let invalidScore = 0;
-//     for (i=0; i<5; i++) {
-//         computerSelection = computerPlay();
-//         playerSelection = playerPlay();
-//         playround(playerSelection, computerSelection);
-//         if (playround(playerSelection, computerSelection) === "You lose!") {
-//             console.log("You lose!");
-//             computerScore += 1;
-//         } else if (playround(playerSelection, computerSelection) === "You win!") {
-//             console.log("You win!!");
-//             playerScore += 1;
-//         } else if (playround(playerSelection, computerSelection) === "It's a draw") {
-//             console.log("It's a draw!")
-//             drawScore += 1;
-//         } else if (playround(playerSelection, computerSelection) === "Invalid!") {
-//             console.log("Hey! That's invalid!");
-//             invalidScore += 1;
-//         }
-//         console.log(`%cComputer answered ${computerSelection}`, "style:italic");
+function playVerdict(){ 
+    scoreBoard.textContent = `YOUR SCORE: ${playerScore} MIMING SCORE: ${computerScore}`;
 
-//     }
-//         if (playerScore > computerScore) {
-//             console.log("%cHOORAY! YOU WIN THE GAME!", "background:yellow; style:bold;");
-//         } else if (playerScore < computerScore){
-//             console.log("%cSORRY, YOU LOSE THE GAME!", "color:white; background:red; style:bold;");
-//         } else {
-//             console.log("%cOOH! IT'S A DRAW!", "color:white; background:blue; style:bold;");
-//         }
-//     console.log(`%cYou scored [${playerScore}] and computer scored [${computerScore}]
-//         while [${drawScore}] game(s) is/are draw and you entered [${invalidScore}] invalid entry/entries!%c`, "background:green, style: bold;");
-//     return console.log("Would you like to play again? Type in %cgame()", "color:white; background:red; style:bold;");
-// }
+    if (playerScore === 5 || computerScore === 5) {
+        cleanUp();
+        if (playerScore === 5) {
+            finalVerdict.textContent = "HOORAY! YOU WIN THE GAME!";
+            finalVerdict.style.cssText = 'color:yellow;';            
+        } else if (computerScore === 5) {
+            finalVerdict.textContent = "SORRY, YOU LOSE THE GAME!";
+            finalVerdict.style.cssText = 'color:red;';
+        }
+        alert('Play again?');
+        location.reload();
+    }
+}
 
-// let playerSelection = weapon.getAttribute('data-name');
+function cleanUp() {
+    gameResult.remove();
+    weaponsFired.remove();
+}

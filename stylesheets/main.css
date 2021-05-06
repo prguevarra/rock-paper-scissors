@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand&display=swap');
+
+
+* {
+    color: #574022;
+    
+}
+body {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #CBAA92;     
+    flex-flow: column;      /*position flex items into column*/
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;      
+    min-height: 100vh;
+}
+
+#game-guide {
+    font-size: 18px;
+    justify-content: center;
+    line-height: 25px;
+    text-align: center;
+}
+
+#ask {
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-style: normal;
+}
+
+#page-title {
+    font-size: 30px;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    font-family: 'Press Start 2P', cursive;
+    align-self: center;
+}
+
+#version {
+    font-size: 20px;
+}
+
+#weapons {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 500px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.weapon-label {
+    font-size: 13px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    padding-top: 10px;
+    padding-bottom: 10px;
+} 
+
+li {
+    display: inline;    /* display unordered list side by side */
+}
+
+img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+main div.weapon:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-color: #FBE3DB;
+    border: 1px solid #dadce0; 
+    border: 3px dotted tomato;
+    border-style: dotted;
+    border-radius: 10%;
+    color:tomato;
+}
+
+.round-weapons {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    right: 0px;
+    left: 0px;
+    top: 465px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.results {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    right: 0px;
+    left: 0px;
+    top: 495px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.score-board {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    right: 0px;
+    left: 0px;
+    top: 525px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.final-verdict {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    right: 0px;
+    left: 0px;
+    top: 470px;
+    text-align: center;
+    font-size: 20px;
+}
+
+footer {
+    position: absolute;
+    justify-content: center;
+    align-content: flex-end;
+    font-size: 15px;
+    bottom: 3px;
+}

@@ -8,33 +8,31 @@
     </head>
     <body>
         <div id = "page-title">ROCK, PAPER OR SCISSORS? <br><h1 id = "version">Kitty version</h1></div>
-        <div id = "game-guide"> Hey there, hooman! Ready to play with meow?
+        <div id = "game-guide"> Hey there, hooman! Ready to play with meow? <br> Win 5 rounds to win the game.
             <br><br><p id = "ask">Choose your weapon:</p>
         </div>
-        <div id = "weapons">
-                <div id = "rock">
-                    <img src = "./assets/rock_reduced.jpg" alt = "Rock">
-                    <p class = "weapon-label"> ROCK </p>
+        <main>
+            <div id = "weapons">
+                <div data-name="rock" class= "weapon">
+                    <img data-name="rock" src = "./assets/rock_reduced.jpg" alt = "Rock">
+                    <p data-name="rock" class = "weapon-label"> ROCK </p>
                 </div>
-                <div id = "paper">
-                    <img src = "./assets/paper_reduced.jpg" alt = "Paper">
-                    <p class = "weapon-label"> PAPER </p>
+                <div data-name="paper" class= "weapon">
+                    <img data-name="paper" src = "./assets/paper_reduced.jpg" alt = "Paper">
+                    <p data-name="paper" class = "weapon-label"> PAPER </p>
                 </div>
-                <div id = "scissors">
-                    <img src = "./assets/scissors_reduced.jpg" alt = "Scissors">
-                    <p class = "weapon-label"> SCISSORS </p>
+                <div data-name="scissors" class= "weapon">
+                    <img data-name="scissors" src = "./assets/scissors_reduced.jpg" alt = "Scissors">
+                    <p data-name="scissors" class = "weapon-label"> SCISSORS </p>
                 </div>
-        </div>
-        <div id = "counter"> 
-                <div id = "player-score"> </div>
-                    <div class = "score">0</div>
-                    <div class = "player">Hooman</div>
-                <div id = "computer-score"> </div>
-                    <div class = "score">0</div>
-                    <div class = "player">Muning</div>
-        </div>
-            
-       <!-- add here DOM version of div to show the overall score-->
+            </div>
+            <div class = "the-divs"></div>
+                <div class = "results"> </div>
+                <div class = "round-weapons"> </div>
+                <div class = "score-board"> </div>
+            </div>
+            <div class = "final-verdict"> </div> 
+        </main>
         <footer>Credits
             <a href="https://www.vecteezy.com/free-vector/cartoon">Cartoon Vectors by Vecteezy</a> 
         </footer>
