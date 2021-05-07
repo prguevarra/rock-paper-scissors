@@ -118,11 +118,11 @@ img {
 }
 
 .final-verdict {
-    position: absolute;
+    position: relative;
     font-family: 'Press Start 2P', cursive;
     right: 0px;
-    left: 0px;
-    top: 470px;
+    left: 10px;
+    top: 10px;
     text-align: center;
     font-size: 20px;
 }
@@ -135,9 +135,9 @@ img {
 
 .play-again-button {
     position: absolute;
-    justify-content: center ;
-    left: 385px;
-    top: 90px;
+    right: 100px;
+    left: 150px;
+    top: 100px;
     color: #574022;
     background-color: #FBE3DB;
     font-family: 'Press Start 2P', cursive;
